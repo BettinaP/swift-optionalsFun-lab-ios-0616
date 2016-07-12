@@ -15,7 +15,7 @@
 var pet = "turtle 🐢"
 
 
-
+"a string"
 
 
 
@@ -25,14 +25,14 @@ var pet = "turtle 🐢"
 var petName: String?
 
 
-
+"optional"
 
 
 
 /*: question3
  ### 3. Currently, what is the _value_ of `petName`?
  */
-
+//nil
 
 
 
@@ -43,6 +43,10 @@ var petName: String?
  ### 4. Give `petName` a value! Assign to it any string. What is its type now?
  */
 // write your code here
+
+// still an optional
+
+petName = "David"
 
 
 
@@ -58,7 +62,7 @@ var petName: String?
 
 
 
-
+print(petName) //i expect it to print the newly assigned value of petName
 
 
 /*: question6
@@ -66,7 +70,13 @@ var petName: String?
  */
 // write your code here
 
+if petName != nil{
 
+    print("pet name is \(petName)")
+} else{
+    print ("pet name doesn't exist after all") // i expect it to print petName to console as an optional "David"
+
+}
 
 
 
@@ -79,7 +89,11 @@ var petName: String?
 
 
 
+if let petName = petName{
 
+
+    print("petName is \(petName)")
+}
 
 
 
@@ -89,7 +103,12 @@ var petName: String?
 var anotherPetName: String?
 // write your code here
 
+if anotherPetName != nil{
+    print("anotherPetName is not nil")
 
+} else {
+    print("the value of anotherPetName is nil indeed")
+}
 
 
 
@@ -100,7 +119,12 @@ var anotherPetName: String?
  */
 // write your code here
 
+if anotherPetName != nil {
+    print("\(anotherPetName) is nil and thus has no value")
 
+} else {
+    print("this is the unwrapped value of anotherPetName \(anotherPetName)") //  "if != nil", it'll print unwrapped value is nil. if written as "if let anotherPetName = nil" to get error messages because can you set something to nil? Received error messages that this was too ambiguous
+}
 
 
 
@@ -113,9 +137,11 @@ var anotherPetName: String?
  */
 // write your code here
 
+let friendsPet : String?
 
 
-
+friendsPet = "Henry"
+print(friendsPet) //it actually printed the newly assigned value as Optional("Henry") even though supposed to be a constant, but since an initial value wasn't set and then a value was assigned and thus value not changed it printed
 
 
 
@@ -127,9 +153,9 @@ var anotherPetName: String?
 // write your code here
 
 
+let anotherFriendsPet: String? = nil
 
-
-
+//anotherFriendsPet = "Jenny" // because let constant and an initial value of nil was set, this constant though optional is still immutable constant once value set so get error messages that it should be changed from let to var.
 
 
 
